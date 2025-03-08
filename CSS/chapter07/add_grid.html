@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .pisseria {
+        display: grid;
+        /* 열3개 동일한 비율로 생성 */
+        grid-template-columns: 1fr 1fr 1fr;
+        /* 행 3개 생성 */
+        grid-template-rows: 80px 80px 80px;
+        /* 요소 간 간격 */
+        gap: 10px;
+        width: 600pdx;
+        height: 300px;
+        background-color: yellow;
+        border: 4px solid red;
+        padding: 10px;
+      }
+      .table {
+        background-color: lightcoral;
+        border: 2px solid brown;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .vip {
+        /* 1열부터 3칸 차지 */
+        grid-column: 1 / span 3;
+      }
+      .window {
+        /* 2행부터 2칸 차지 */
+        grid-row: 2 / span 2;
+      }
+      .upstairs {
+        /* 자기자신을 수평 정렬 */
+        justify-self: end;
+        /* 자기자신을 수직 정렬 */
+        align-self: end;
+        background-color: mediumseagreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>피자 가게 테이블</h1>
+    <p>scc grid로 파자가게 테이블 배치하기</p>
+    <div class="pisseria">
+      <div class="table vip">vip 단체석</div>
+      <div class="table">테이블1</div>
+
+      <div class="table window">창가 테이블</div>
+      <div class="table">테이블2</div>
+      <div class="table upstairs">2층 테이블</div>
+    </div>
+  </body>
+</html>

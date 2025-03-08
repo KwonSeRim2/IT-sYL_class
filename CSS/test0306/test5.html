@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 2000px;
+      }
+      h1 {
+        text-align: center;
+        margin: 10px auto;
+      }
+      .room {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 500px;
+        height: 200px;
+        justify-self: center;
+        background-image: url('https://i.pinimg.com/736x/1e/e9/b2/1ee9b22d65e1db3d2ca92fdd62a07c94.jpg');
+        border: 3px solid black;
+        background-size: 120px;
+        background-position: center;
+        border-radius: 10px;
+        position: relative;
+      }
+      .furniture {
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      .bed {
+        position: absolute;
+        top: 10px;
+        left: 19px;
+      }
+      .chair {
+        position: relative;
+        top: -10px;
+      }
+      .tv {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background-color: black;
+        color: white;
+      }
+      .content {
+        width: 700px;
+        margin: 20px auto;
+        padding: 10px;
+        background-color: gainsboro;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chill Guy의 방</h1>
+
+    <!-- 방 영역 (벽지 포함) -->
+    <div class="room">
+      <div class="furniture bed">🛏️ 침대</div>
+      <div class="furniture chair">🪑 의자</div>
+    </div>
+
+    <!-- 내용 영역 -->
+    <div class="content">
+      <p>
+        Chill Guy의 방에는 편안한 가구와 함께, 벽에 Chill한 벽지가 붙어
+        있습니다.
+      </p>
+      <p>
+        스크롤을 내려보세요! TV는 항상 화면 오른쪽 하단에 고정되어 있습니다.
+      </p>
+    </div>
+
+    <!-- 화면 고정 TV -->
+    <div class="furniture tv">📺 TV - Chill 뉴스</div>
+  </body>
+</html>

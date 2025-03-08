@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 500px;
+        margin: 0 auto;
+      }
+      #top {
+        background-color: green;
+      }
+      #middle {
+        /* 수평정렬 부모에 넣어야 한다 */
+        display: flex;
+      }
+      #left {
+        width: 200px;
+        background-color: red;
+      }
+      #right {
+        width: 300px;
+        background-color: blue;
+      }
+
+      #bottom {
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dicta culpa
+      minus perspiciatis rem, suscipit sunt sed ipsa molestiae reiciendis.
+      Repellat necessitatibus, a suscipit quaerat nobis impedit ducimus
+      delectus. Architecto!
+    </div>
+
+    <div id="middle">
+      <div id="left">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+        nemo in quod natus voluptas nisi voluptates cumque, et consequatur quia
+        ullam eos dicta ex incidunt deleniti dignissimos quam, numquam error.
+      </div>
+      <div id="right">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+        nemo in quod natus voluptas nisi voluptates cumque, et consequatur quia
+        ullam eos dicta ex incidunt deleniti dignissimos quam, numquam error.
+      </div>
+    </div>
+    <div id="bottom">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis earum
+      aliquid exercitationem vero non doloremque, labore maiores, natus
+      quibusdam, modi laborum voluptatibus. Eos quas tempore at molestiae.
+      Laborum, expedita dolore.
+    </div>
+  </body>
+</html>

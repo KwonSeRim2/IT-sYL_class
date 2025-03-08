@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 3000px;
+      }
+      .wrap {
+        width: 600px;
+        background-color: blue;
+        position: relative;
+      }
+      .container {
+        width: 400px;
+        background-color: rgb(255, 222, 72);
+        position: relative;
+      }
+      .container .item {
+        border: 2px solid black;
+        background-color: darkgreen;
+      }
+      .container .item:nth-child(1) {
+        width: 100px;
+        height: 150px;
+      }
+      .container .item:nth-child(2) {
+        width: 150px;
+        height: 150px;
+        position: fixed;
+      }
+      .container .itme:nth-child(3) {
+        width: 30px;
+        height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="itme">itme1</div>
+      <div class="itme">itme2</div>
+      <div class="itme">itme3</div>
+    </div>
+  </body>
+</html>

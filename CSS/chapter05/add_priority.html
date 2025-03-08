@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- .list li.item   21점 -->
+    <!-- #submit span   101점 -->
+    <!-- header .ment li:nth-child(2   22점) -->
+
+    <!-- important > 인라인> 아이디> 클레스 > 태그  -->
+
+    <style>
+      /* inpuortant 최고 점수 */
+      div {
+        color: red !important;
+      }
+      /* 일만태그 1점 */
+      div {
+        color: violet;
+      }
+      /* 100점 */
+      #yellow {
+        color: yellow;
+      }
+      /* 10점 */
+      .green {
+        color: green;
+      }
+      /* 0점 */
+      * {
+        color: blue;
+      }
+      body {
+        color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 인라인 1000점 -->
+    <div id="yellow" class="green" style="color: orangered">안녕하세요</div>
+  </body>
+</html>
