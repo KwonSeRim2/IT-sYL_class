@@ -11,59 +11,249 @@
         background-repeat: no-repeat;
       }
       .container {
-        display: grid;
-        grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
-        grid-template-rows: 100px;
-        gap: 10px;
-        text-align: center;
-        position: fixed;
-        align-items: center;
-        justify-items: center;
-        margin: 100px auto;
+        margin: 100px;
       }
-      .ch {
-        width: 100px;
+      .heroes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 700px;
+        margin: 0 auto;
+      }
+      .hero {
+        width: 80px;
+        height: 84px;
+        margin: 4px;
         border: 4px solid white;
         border-radius: 10px;
-        top: -10px;
+        box-sizing: border-box;
+        overflow: hidden;
+        /* 기울이기 비틀기  */
+        transform: skewX(-17deg);
+        transition: transform 0.1s, background-color 0.6s;
+      }
+      .hero:hover {
+        background-color: orange;
+        transform: skewX(-14deg) scale(1.3);
+      }
+      .hero .image {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 90px;
+      }
+
+      .hero:nth-child(1) .image {
+        background-image: url('img/hero1.png');
+      }
+      .hero:nth-child(2) .image {
+        background-image: url('img/hero2.png');
+      }
+      .hero:nth-child(3) .image {
+        background-image: url('img/hero3.png');
+      }
+      .hero:nth-child(4) .image {
+        background-image: url('img/hero4.png');
+      }
+      .hero:nth-child(5) .image {
+        background-image: url('img/hero5.png');
+      }
+      .hero:nth-child(6) .image {
+        background-image: url('img/hero6.png');
+      }
+      .hero:nth-child(7) .image {
+        background-image: url('img/hero7.png');
+      }
+      .hero:nth-child(8) .image {
+        background-image: url('img/hero8.png');
+      }
+      .hero:nth-child(9) .image {
+        background-image: url('img/hero9.png');
+      }
+      .hero:nth-child(10) .image {
+        background-image: url('img/hero10.png');
+      }
+      .hero:nth-child(11) .image {
+        background-image: url('img/hero11.png');
+      }
+      .hero:nth-child(12) .image {
+        background-image: url('img/hero12.png');
+      }
+      .hero:nth-child(13) .image {
+        background-image: url('img/hero13.png');
+      }
+      .hero:nth-child(14) .image {
+        background-image: url('img/hero14.png');
+      }
+      .hero:nth-child(15) .image {
+        background-image: url('img/hero15.png');
+      }
+      .hero:nth-child(16) .image {
+        background-image: url('img/hero16.png');
+      }
+      .hero:nth-child(17) .image {
+        background-image: url('img/hero17.png');
+      }
+      .hero:nth-child(18) .image {
+        background-image: url('img/hero18.png');
+      }
+      .hero:nth-child(19) .image {
+        background-image: url('img/hero19.png');
+      }
+      .hero:nth-child(20) .image {
+        background-image: url('img/hero20.png');
+      }
+      .hero:nth-child(21) .image {
+        background-image: url('img/hero21.png');
+      }
+      .hero:nth-child(22) .image {
+        background-image: url('img/hero22.png');
+      }
+      .hero:nth-child(23) .image {
+        background-image: url('img/hero23.png');
+      }
+      .hero:nth-child(24) .image {
+        background-image: url('img/hero24.png');
+      }
+      .hero:nth-child(25) .image {
+        background-image: url('img/hero25.png');
+      }
+      .hero:nth-child(26) .image {
+        background-image: url('img/hero26.png');
+      }
+      .hero:nth-child(27) .image {
+        background-image: url('img/hero27.png');
+      }
+      .hero:nth-child(28) .image {
+        background-image: url('img/hero28.png');
+      }
+      .hero:nth-child(29) .image {
+        background-image: url('img/hero29.png');
+      }
+      .hero:nth-child(30) .image {
+        background-image: url('img/hero30.png');
+      }
+      .hero:nth-child(31) .image {
+        background-image: url('img/hero31.png');
+      }
+      .hero:nth-child(32) .image {
+        background-image: url('img/hero32.png');
+        background-size: cover;
+      }
+
+      #logo {
+        max-width: 300px;
+        margin: 50px auto;
+        padding: 0 20px;
+      }
+      #logo img {
+        width: 100%;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="heros">
-        <img src="img/hero1.png" alt="" class="ch" />
-        <img src="img/hero2.png" alt="" class="ch" />
-        <img src="img/hero3.png" alt="" class="ch" />
-        <img src="img/hero4.png" alt="" class="ch" />
-        <img src="img/hero5.png" alt="" class="ch" />
-        <img src="img/hero6.png" alt="" class="ch" />
-        <img src="img/hero7.png" alt="" class="ch" />
-        <img src="img/hero8.png" alt="" class="ch" />
-        <img src="img/hero9.png" alt="" class="ch" />
-        <img src="img/hero10.png" alt="" class="ch" />
-        <img src="img/hero11.png" alt="" class="ch" />
-        <img src="img/hero12.png" alt="" class="ch" />
-        <img src="img/hero13.png" alt="" class="ch" />
-        <img src="img/hero14.png" alt="" class="ch" />
-        <img src="img/hero15.png" alt="" class="ch" />
-        <img src="img/hero16.png" alt="" class="ch" />
-        <img src="img/hero17.png" alt="" class="ch" />
-        <img src="img/hero18.png" alt="" class="ch" />
-        <img src="img/hero19.png" alt="" class="ch" />
-        <img src="img/hero20.png" alt="" class="ch" />
-        <img src="img/hero21.png" alt="" class="ch" />
-        <img src="img/hero22.png" alt="" class="ch" />
-        <img src="img/hero23.png" alt="" class="ch" />
-        <img src="img/hero24.png" alt="" class="ch" />
-        <img src="img/hero25.png" alt="" class="ch" />
-        <img src="img/hero26.png" alt="" class="ch" />
-        <img src="img/hero27.png" alt="" class="ch" />
-        <img src="img/hero28.png" alt="" class="ch" />
-        <img src="img/hero29.png" alt="" class="ch" />
-        <img src="img/hero30.png" alt="" class="ch" />
-        <img src="img/hero31.png" alt="" class="ch" />
-        <img src="img/hero32.png" alt="" class="ch" />
+      <div class="heroes">
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+        <div class="hero">
+          <div class="image"></div>
+        </div>
+      </div>
+      <div id="logo">
+        <img src="img/logo_overwatch.png" alt="" />
       </div>
     </div>
   </body>
