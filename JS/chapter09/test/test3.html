@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let pikachu = { name: '피카츄', hp: 100, attack: 20 };
+      let charmander = { name: '파이리', hp: 80, attack: 15 };
+
+      function attackPokemon(attacker, defender) {
+        if (attacker == pikachu) {
+          let left1 = charmander.hp - pikachu.attack;
+          if (left1 > 0) {
+            console.log(`피카츄가 파이리를 공격했다! 남은 체력: ${left1}`);
+          } else {
+            console.log('파이리가 쓰러졌다!');
+          }
+          charmander.hp = left1;
+        } else if (attacker == charmander) {
+          let left2 = pikachu.hp - charmander.attack;
+
+          if (left2 > 0) {
+            console.log(`파이리가 피카츄를 공격했다! 남은 체력: ${left2}`);
+          } else {
+            console.log('피캬츄가 쓰러졌다!');
+          }
+          pikachu.hp = left2;
+        } else {
+        }
+      }
+
+      attackPokemon(pikachu, charmander);
+      attackPokemon(charmander, pikachu);
+      attackPokemon(pikachu, charmander);
+      attackPokemon(pikachu, charmander);
+      attackPokemon(pikachu, charmander);
+    </script>
+  </head>
+  <body></body>
+</html>

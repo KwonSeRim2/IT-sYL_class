@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let bulbasaur = { name: '이상해씨', level: 5, skills: ['몸통박치기'] };
+
+      function levelUp(i) {
+        i.level += 1;
+        console.log(`이상해씨의 레벨이 ${i.level}이(가) 되었다!`);
+        if (i.level == 7) {
+          i.skills.push('덩굴채찍');
+          console.log(
+            `이상해씨가 새로운 기술 '${
+              i.skills[i.skills.length - 1]
+            }'을(를) 배웠다!`
+          );
+        } else if (i.level == 10) {
+        } else if (i.level == 16) {
+        }
+      }
+
+      levelUp(bulbasaur);
+      levelUp(bulbasaur);
+      levelUp(bulbasaur);
+    </script>
+  </head>
+  <body></body>
+</html>

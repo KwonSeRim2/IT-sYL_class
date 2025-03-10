@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let squirtle = { name: '꼬부기', hp: 50, attack: 10, type: '물' };
+      let bulbasaur = { name: '이상해씨', hp: 50, attack: 8, type: '풀' };
+
+      function battle(attacker, defender) {
+        if (attacker.type == '풀' && defender.type == '물') {
+          let a = attacker.attack * 2;
+          console.log(
+            `${attacker.name}(가) ${defender.name}을(를) 공격했다! (피해량: ${a})`
+          );
+          defender.hp -= a;
+          console.log(`${defender.name}의 남은 체력: ${defender.hp}`);
+        } else {
+          console.log(
+            `${attacker.name}(가) ${defender.name}을(를) 공격했다! (피해량: ${attacker.attack})`
+          );
+          defender.hp -= attacker.attack;
+          console.log(`${defender.name}의 남은 체력: ${defender.hp}`);
+        }
+      }
+      battle(squirtle, bulbasaur);
+      battle(bulbasaur, squirtle);
+    </script>
+  </head>
+  <body></body>
+</html>

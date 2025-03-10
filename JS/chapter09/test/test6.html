@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let charmander = { name: '파이리', level: 14, evolution: '리자드' };
+      let pikachu = { name: '피카츄', level: 20, evolution: null };
+
+      function levelUp(pokemon) {
+        pokemon.level += 1;
+        if (pokemon.level >= 16) {
+          if (pokemon.evolution != null) {
+            console.log(
+              `${pokemon.name}(가) ${pokemon.evolution}으로 진화했다!`
+            );
+          } else {
+            console.log(
+              `${pokemon.name}의 레벨이 ${pokemon.level}이(가) 되었다!`
+            );
+          }
+        } else {
+          console.log(
+            `${pokemon.name}의 레벨이 ${pokemon.level}이(가) 되었다!`
+          );
+        }
+      }
+
+      levelUp(charmander);
+      levelUp(charmander);
+      levelUp(pikachu);
+    </script>
+  </head>
+  <body></body>
+</html>

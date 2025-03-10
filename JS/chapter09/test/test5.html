@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let pikachu = { name: '피카츄', level: 5, xp: 20 };
+
+      function gainXP(pokemon) {
+        pokemon.xp += 30;
+        if (pokemon.xp >= 50) {
+          pokemon.level += 1;
+          pokemon.xp -= 50;
+          console.log(`피카츄이(가) 레벨업! 현재 레벨: ${pokemon.level}`);
+        } else {
+          console.log(
+            `피카츄이(가) 경험치를 얻었다! 현재 경험치: ${pokemon.xp}`
+          );
+        }
+      }
+
+      gainXP(pikachu);
+      gainXP(pikachu);
+    </script>
+  </head>
+  <body></body>
+</html>

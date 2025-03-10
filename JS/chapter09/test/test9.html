@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let pokedex = [];
+      function addPokemon(name, type, level) {
+        let i = { name, type, level };
+        pokedex.push(i);
+        console.log(`${i.name}(가) 도감에 등록되었습니다!`);
+      }
+      addPokemon('뮤츠', '에스퍼', 70);
+      addPokemon('망나뇽', '드래곤', 55);
+
+      console.log(pokedex);
+    </script>
+  </head>
+  <body></body>
+</html>
