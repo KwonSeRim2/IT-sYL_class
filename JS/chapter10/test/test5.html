@@ -9,13 +9,24 @@
         let button = document.getElementById('addNewsBtn');
         let input = document.getElementById('newsInput');
         let text = document.getElementById('newsList');
+        let output = '';
+        let add = '';
 
         button.onclick = function () {
-          let output;
-          for (let i = 0; i < 10; i++) {
-            output += `<ul><li>${input.value}</li></ul>`;
+          add = input.value;
+
+          if (add == '') {
+            alert('뉴스 내용을 입력하세요!');
+          } else {
+            add = `<ul><li>${add}</li></ul>`;
+
+            output += add;
+
+            text.innerHTML = output;
+            input.value = '';
+            add = '';
+            return;
           }
-          text.innerHTML = output;
         };
       };
     </script>
