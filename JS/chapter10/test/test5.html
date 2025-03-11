@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        let button = document.getElementById('addNewsBtn');
+        let input = document.getElementById('newsInput');
+        let text = document.getElementById('newsList');
+
+        button.onclick = function () {
+          let output;
+          for (let i = 0; i < 10; i++) {
+            output += `<ul><li>${input.value}</li></ul>`;
+          }
+          text.innerHTML = output;
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <input type="text" id="newsInput" placeholder="금융 뉴스 입력" />
+    <button id="addNewsBtn">뉴스 추가</button>
+    <ul id="newsList"></ul>
+  </body>
+</html>

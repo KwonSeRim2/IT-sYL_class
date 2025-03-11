@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 이벤트를 연결
+      window.onload = function () {
+        //문서 객체를 선택
+        let headers = document.querySelectorAll('h1');
+        //변수를 선언
+        for (let i = 0; i < headers.length; i++) {
+          let header = headers[i];
+          //문서 객체를 조작
+          header.style.color = 'orange';
+          header.style.background = 'red';
+          header.innerHTML = 'From JavaScript';
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1>header</h1>
+    <h1>header</h1>
+    <h1>header</h1>
+  </body>
+</html>
