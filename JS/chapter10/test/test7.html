@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let list, output, add;
+      window.onload = function () {
+        list = document.getElementById('transactionHistory');
+        output = '';
+        add = '';
+      };
+
+      function addTransaction(i) {
+        let date = new Date();
+        let ap = date.getHours() < 12 ? '오전' : '오후';
+        let hour =
+          date.getHours() < 12 ? date.getHours() : date.getHours() - 12;
+        add = `<li>${i}원 이체 완료 - ${date.getFullYear()}. ${
+          date.getMonth() + 1
+        }. ${date.getDate()}. ${ap} ${hour}:${date.getMinutes()}:${date.getSeconds()} </li>`;
+
+        output = add + output;
+
+        list.innerHTML = output;
+        add = '';
+      }
+    </script>
+  </head>
+  <body>
+    <ul id="transactionHistory"></ul>
+
+    <button onclick="addTransaction(100000)">100,000원 이체</button>
+    <button onclick="addTransaction(50000)">50,000원 이체</button>
+  </body>
+</html>
