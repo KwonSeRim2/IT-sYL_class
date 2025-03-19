@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h3>마음 속 이유 (다중 선택):</h3>
+      <input type="checkbox" value="웃을 때 예뻐서" v-model="list" /> 웃을 때
+      예뻐서
+      <input type="checkbox" value="마음이 따뜻해서" v-model="list" /> 마음이
+      따뜻해서
+      <input type="checkbox" value="함께 있으면 편안해서" v-model="list" /> 함께
+      있으면 편안해서
+      <input type="checkbox" value="내 편이 되어주어서" v-model="list" /> 내
+      편이 되어주어서
+      <input type="checkbox" value="배려심이 깊어서" v-model="list" /> 배려심이
+      깊어서
+      <br />
+      <span v-if="list.length === 0">아직 이유를 고르지 않았어요!</span>
+      <span v-else="list.length"
+        >선택 항목 ({{list.length}}개): {{list.join(', ')}}</span
+      >
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return { list: [] };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

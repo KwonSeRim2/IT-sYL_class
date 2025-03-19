@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <input type="text" v-model="name" placeholder="이름 입력" />
+        <br />
+        <textarea
+          name=""
+          id=""
+          rows="4"
+          cols="50"
+          v-model="text"
+          placeholder="편지 내용"
+        ></textarea>
+      </div>
+
+      <h2>마음 속 이유 (2개 이상 선택하세요):</h2>
+      <div>
+        <input type="checkbox" /> 유머 감각
+        <input type="checkbox" value="a" v-model="list" /> 신뢰
+        <input type="checkbox" value="b" v-model="list" /> 배려
+        <input type="checkbox" value="c" v-model="list" /> 따뜻함
+        <input type="checkbox" /> 같이 있으면 편안함
+      </div>
+      <div>시간 : <input type="text" /></div>
+      <div>이름을 입력해 주세요</div>
+      <div v-if="text.length <200">
+        편지 재용을 200자 이상 작셩해주세요 (현재 {{text.length}}자)
+      </div>
+      <div>
+        <span v-show="list.length <=1"
+          >'신뢰', '배려', '따뜻함' 중 최소 2개를 선택해주세요</span
+        >
+      </div>
+      <input type="button" value="마지막 고백 결심 버튼" />
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return { name: '', list: [], text: '' };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

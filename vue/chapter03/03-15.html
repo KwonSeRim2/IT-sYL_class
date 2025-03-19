@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      #list {
+        width: 600px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      #list td,
+      #list th {
+        border: 1px solid black;
+        text-align: center;
+      }
+      #list > thead > tr {
+        color: yellow;
+        background-color: purple;
+      }
+    </style>
+    <div id="app">
+      <table id="list">
+        <thead>
+          <tr>
+            <th>변호</th>
+            <th>이름</th>
+            <th>전화변호</th>
+          </tr>
+        </thead>
+        <tbody id="contacts">
+          <!-- 여러개의 요소를 묶어서 반복시키고 싶을 때 tecplate 사용
+           화면에는 렌더링 되지 않는다 -->
+          <template v-for="(contact, index) in contacts" ::key="contact.no">
+            <tr>
+              <td>{{contact.no}}</td>
+              <td>{{contact.name}}</td>
+              <td>{{contact.tel}}</td>
+            </tr>
+            <!-- 4줄마다 가로선 추가 -->
+            <tr class="divider" v-if="index % 4 === 3">
+              <td colspan="3"></td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            contacts: [
+              { no: 1011, name: 'RM', tel: '010-1111-2222' },
+              { no: 1012, name: '정국', tel: '010-2222-2222' },
+              { no: 1013, name: '제이홉', tel: '010-3333-2222' },
+              { no: 1014, name: '슈가', tel: '010-4444-2222' },
+              { no: 1015, name: '뷔', tel: '010-5555-2222' },
+              { no: 1016, name: '지민', tel: '010-6666-2222' },
+            ],
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

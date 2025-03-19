@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <input
+        type="checkbox"
+        v-model="go"
+        true-value="고백 준비 완료!"
+        false-value=""
+      />
+      고백할 준비 됐나요?
+      <br />
+      <span>{{go}}</span>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return { go: '' };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

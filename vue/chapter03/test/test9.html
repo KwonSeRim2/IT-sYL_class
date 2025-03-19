@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="time" />
+      <div v-if="time > 17">
+        마감 임박! 아래 항목 중 마지막으로 남은 준비:
+        <span v-html="list.splice(3)">{{list}}</span>
+      </div>
+      <div v-else="time">
+        <h4>아직 준비할 항목</h4>
+        <ul v-for="(li, index) in list">
+          <li>{{li}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            list: ['편지 작성', '편지 검토', '봉투 밀봉', '스탬프 찍기'],
+            time: 0,
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
