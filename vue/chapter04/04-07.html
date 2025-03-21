@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      x: <input type="text" v-model.number="x" /> <br />
+      y: <input type="text" v-model.number="y" /> <br />
+      덧셈 결과: {{sum}}
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return { x: 0, y: 0, sum: 0 };
+        },
+        // 변경되는 vue데이터를 자동을로 감지한ㄴ기 때문에 해당 코드의경우 watch로 할 필요 없음
+       computed:{
+        let result = Number(this.x) + Number(this.y)
+        if(isNaN(result)) return 0
+        else return result
+       }
+      }).mount('#app');
+    </script>
+  </body>
+</html>

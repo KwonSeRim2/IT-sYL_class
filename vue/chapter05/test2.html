@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <button value="엘터 지팡이" v-model="st" @click="change">
+        엘터 지팡이
+      </button>
+      <button value="단풍 지팡이" v-model="st">단풍 지팡이</button>
+      <button value="벗나무 지팡이" v-model="st">벗나무 지팡이</button>
+      <button value="지팡이 초기화" v-model="st">지팡이 초기화</button>
+      <br />
+      <span>당신은 {{st}}을 선택했습니다!</span>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return { st: '' };
+        },
+        methods: {
+          change() {},
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

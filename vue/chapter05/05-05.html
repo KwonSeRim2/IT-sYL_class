@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div
+        @contextmenu="ctxStop"
+        style="position: absolute; left: 5px; top: 5px; right: 5px; bottom: 5px"
+      >
+        <a href="https://facebook.com" @click="confirmFB">페이스북</a>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {};
+        },
+        methods: {
+          //기본 마우스 우클릭의 메뉴 팝업 차단
+          ctxStop(e) {
+            e.preventDefault();
+          },
+          // 만약 확인 창에서 취소 누르면 a 의 링크 이동 기능 차단
+          confirmFB(e) {
+            if (!confirm('페이스북으로 이동할까요?')) {
+              e.preventDefault();
+            }
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

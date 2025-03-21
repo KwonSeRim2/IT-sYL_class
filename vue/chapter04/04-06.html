@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      x: <input type="text" v-model.number="x" /> <br />
+      y: <input type="text" v-model.number="y" /> <br />
+      덧셈 결과: {{sum}}
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return { x: 0, y: 0, sum: 0 };
+        },
+        watch: {
+          // 특정 데이터를 감시하여 변경 전후 값 파악 가능
+          //관찰하고 싶은 데이터명과 함수명이 같아야 함
+          x(current, old) {
+            console.log(`## x: ${x} ---> ${current}`);
+            var result = Number(current) + Number(this.y);
+            if (isNaN(result)) this.sum = 0;
+            else this.sum = result;
+          },
+          y(current, old) {
+            console.log(`## y: ${old} ---> ${current}`);
+            var result = Number(this.x) + Number(current);
+            if (isNaN(result)) this.sum = 0;
+            else this.sum = result;
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

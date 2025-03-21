@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      1보다 큰수 : <input type="text" v-model.number="num" />
+      <br />
+      1부텨 입력한 값까지의 합: <span>{{sum}}</span> <br />
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return { num: 0 };
+        },
+        computed: {
+          sum() {
+            let n = parseInt(this.num);
+            if (Number.isNaN(n)) return 0;
+            return (n * (n + 1)) / 2;
+          },
+        },
+        //  vue컨포넌트 만들어질때 호출(데이터만)
+        created() {
+          console.log('## created');
+        },
+        // DDM  요소(html 태그) 에 데이터가 적용될 때
+        mounted() {
+          console.log('## mounted');
+        },
+        // 데이터로 화면에 요소가 변경될때
+        updated() {
+          console.log('## updated');
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
