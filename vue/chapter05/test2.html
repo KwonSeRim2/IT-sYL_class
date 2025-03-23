@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,25 +7,33 @@
   </head>
   <body>
     <div id="app">
-      <button value="엘터 지팡이" v-model="st" @click="change">
-        엘터 지팡이
-      </button>
-      <button value="단풍 지팡이" v-model="st">단풍 지팡이</button>
-      <button value="벗나무 지팡이" v-model="st">벗나무 지팡이</button>
-      <button value="지팡이 초기화" v-model="st">지팡이 초기화</button>
+      <button @click="nameCh('엘더 지팡이이')">엘더 지팡이이</button>
+      <button @click="nameCh('단풍 지팡이')">단풍 지팡이</button>
+      <button @click="nameCh('벗나무 지팡이')">벗나무 지팡이</button>
+      <button @click="reset">지팡이 초기화</button>
       <br />
-      <span>당신은 {{st}}을 선택했습니다!</span>
+      <span>{{mess}}</span>
     </div>
 
     <script src="https://unpkg.com/vue"></script>
     <script>
       let vm = Vue.createApp({
-        name: 'App',
+        mame: 'App',
         data() {
-          return { st: '' };
+          return { stick: '', mess: '' };
         },
         methods: {
-          change() {},
+          nameCh(stick) {
+            if (this.stick == stick) {
+              this.mess = `이미 ${this.stick}을 선택했습니다. 다른 지팡이를 선택하세요!`;
+            } else {
+              this.mess = `당신은 ${stick}지팡이를 선택했습니다.`;
+              this.stick = stick;
+            }
+          },
+          reset() {
+            this.mess = '지팡이를 다시 선택하세요요';
+          },
         },
       }).mount('#app');
     </script>
