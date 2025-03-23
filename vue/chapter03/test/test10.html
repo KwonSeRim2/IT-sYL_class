@@ -28,17 +28,20 @@
         <input type="checkbox" value="c" v-model="list" /> 따뜻함
         <input type="checkbox" /> 같이 있으면 편안함
       </div>
-      <div>시간 : <input type="text" /></div>
-      <div>이름을 입력해 주세요</div>
-      <div v-if="text.length <200">
+      <div>시간 : <input type="text" v-model="time" /></div>
+      <div v-if="name.length ===0" v-model="con">이름을 입력해 주세요</div>
+      <div v-if="text.length <200" v-model="con">
         편지 재용을 200자 이상 작셩해주세요 (현재 {{text.length}}자)
       </div>
-      <div>
-        <span v-show="list.length <=1"
-          >'신뢰', '배려', '따뜻함' 중 최소 2개를 선택해주세요</span
-        >
+      <div v-if="list.length <=1" v-model="con">
+        '신뢰', '배려', '따뜻함' 중 최소 2개를 선택해주세요
       </div>
-      <input type="button" value="마지막 고백 결심 버튼" />
+      <br />
+      <input
+        type="button"
+        v-if="0<time && time<18 && list.length >=2 && text.length >=200 && name.length !==0"
+        value="마지막 고백 결심 버튼"
+      />
     </div>
 
     <script src="https://unpkg.com/vue"></script>
@@ -46,7 +49,7 @@
       let vm = Vue.createApp({
         name: 'App',
         data() {
-          return { name: '', list: [], text: '' };
+          return { name: '', list: [], text: '', con: [], time: 0 };
         },
       }).mount('#app');
     </script>
