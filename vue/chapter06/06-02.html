@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- stop수식어는 부모로 이벤트 전파 방지
+      style1을 객체와 바인딩, 마우스 오버와 아웃 시 이벤트 바인딩
+      style1 backgroundColor: "aqua" color: "black" -->
+      <button
+        :style="style1"
+        @mouseover.stop="overEvent"
+        @mouseout.stop="outEvent"
+      >
+        테스트
+      </button>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            style1: {
+              backgroundColor: 'aqua',
+              color: 'black',
+            },
+          };
+        },
+        methods: {
+          overEvent() {
+            this.style1.backgroundColor = 'purple';
+            this.style1.color = 'yellow';
+          },
+          outEvent() {
+            this.style1.backgroundColor = 'aqua';
+            this.style1.color = 'black';
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
