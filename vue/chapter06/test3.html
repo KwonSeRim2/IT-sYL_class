@@ -39,12 +39,14 @@
         width: 200px;
         border-radius: 7px;
       }
-      button {
+      .defaultB {
         border: 1px solid black;
         color: black;
         border-radius: 3px;
       }
-      .clickColor {
+      .clickB {
+        border: 1px solid black;
+        border-radius: 3px;
         background-color: purple;
         color: white;
         font-weight: bold;
@@ -54,25 +56,26 @@
       <h2 class="mb-3">세종대 맛집 추천 및 정렬 기능🍽</h2>
       <button
         class="m-1"
-        v-for="(item, index) in list"
-        :value="index"
-        @click="clickEvent"
+        v-for="item in list"
+        :key="item.key"
+        @click="selected = item.label"
         @mouseover="overEvent"
-        :class="clickEvent()"
+        :class="selected === item.label ? 'clickB' : 'defaultB'"
       >
-        {{item}}
+        {{item.label}}
       </button>
       <div class="row">
         <div
           class="col-md-4 m-1 layout"
-          v-for="res in restaurants"
+          v-for="res in sort"
           :class="getAverage(res.reviews).style1"
         >
-          <divj class="card-title">{{res.name}}</divj>
+          <div class="card-title">{{res.name}}</div>
           <div class="card-body">
             <i class="fa-solid fa-star" style="color: yellow"></i>평균
             평점:{{getAverage(res.reviews).avg}}
           </div>
+          <p>리뷰수: {{res.reviews.length}}</p>
         </div>
       </div>
     </div>
@@ -91,8 +94,12 @@
               { name: '우화등선', reviews: [3.2, 3.4, 3.1] },
               { name: '세종원', reviews: [3.9, 4.0, 3.8] },
             ],
-            list: ['평점 높은순', '평점 낮은순', '리뷰 많은 순'],
-            clickSt: '',
+            list: [
+              { label: '평점 높은순', key: 'high' },
+              { label: '평점 낮은순', key: 'low' },
+              { label: '리뷰 많은순', key: 'count' },
+            ],
+            selected: '평점 높은순',
           };
         },
         methods: {
@@ -114,11 +121,28 @@
             }
             return { avg, style1 };
           },
-          clickEvent(e) {
-            return 'clickColor';
+        },
+        computed: {
+          sort() {
+            let sortlist = this.restaurants;
+            if (this.selected === '평점 높은순') {
+              sortlist.sort(
+                (a, b) =>
+                  this.getAverage(b.reviews).avg -
+                  this.getAverage(a.reviews).avg
+              );
+            } else if (this.selected === '평점 낮은순') {
+              sortlist.sort(
+                (a, b) =>
+                  this.getAverage(a.reviews).avg -
+                  this.getAverage(b.reviews).avg
+              );
+            } else if (this.selected === '리뷰 많은순') {
+              sortlist.sort((a, b) => b.reviews.length - a.reviews.length);
+            }
+            return sortlist;
           },
         },
-        computed: {},
       }).mount('#app');
     </script>
   </body>
